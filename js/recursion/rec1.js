@@ -1,5 +1,3 @@
-
-
 function printoneton(i,n){
     if(i>n) return;
     printoneton(i+1,n)
@@ -49,11 +47,53 @@ function digitinnumber(num){
     digitinnumber(num)
 }
 
-// let arr = [1,2,3,4,5,6]
+function linearRecursive(array,i,max) {
+    if(i == array.length) return max;
+    max = Math.max(max,array[i]);
+    return linearRecursive(array,i+1,max);
+}
+
+function xtothepowern(x,n,ans,cntr) {
+    if(cntr == n){
+        console.log(x," to the power ",n," is ",ans);
+        return
+    }
+    ans = ans *x;
+    cntr++;
+    xtothepowern(x,n,ans,cntr)
+}
+
+function binarysearch(arr,sti,ede,target) {
+    if (sti > ede) return false;
+    const midi = Math.floor((sti+ede)/2);
+    if(arr[midi] === target){
+        return true;
+    }else if(arr[midi]>target){
+        ede = midi-1;
+        return binarysearch(arr,sti,ede,target);
+    }else if(arr[midi]<target){
+        sti=midi+1;
+        return binarysearch(arr,sti,ede,target);
+    }else{
+        return false
+    }
+}
+
+
+
+let arr = [1,23,3,4,5,6]
 // let s = "abcdefghijklmnopqrstuvwxyz"
 
-let num = 12302;
-digitinnumber(num)
+// let num = 12302;
+// let m = linearRecursive(arr,0,arr[0]);
+// console.log(m);
+// xtothepowern(2,10,1,0);
+let isnum = binarysearch(arr,0,arr.length-1,5)
+console.log(isnum);
+
+
+
+// digitinnumber(num)
 
 // console.log(s);
 
