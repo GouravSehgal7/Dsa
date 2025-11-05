@@ -1,0 +1,153 @@
+Stage 1: Basic Recursion Fundamentals
+
+Goal: Understand how recursive calls work, base cases, and stack unwinding.
+
+Focus on: function call flow, base conditions, return propagation.
+
+Print numbers from 1 to N (forward and backward) ---------------------- done >>
+
+Sum of first N natural numbers ------------------------- done >>
+
+Factorial of N ----------------------------- done >>
+
+Fibonacci series up to Nth term ----------------------------- done >>
+
+Reverse a string using recursion ----------------------- done >>
+
+Check if a string is palindrome ----------------------------- done >> 
+
+Count digits in a number  ----------------------------- done >>
+
+Find maximum element in an array recursively
+
+Power of a number (x^n) using recursion
+
+Implement binary search recursively
+
+🪜 Stage 2: Recursive Patterns and Decision-Making
+
+Goal: Get comfortable with recursion trees, branching, and multiple recursive calls.
+
+Focus on: recursion tree visualization and understanding branching paths.
+
+Print all subsequences of a string
+
+Print all subsets of an array
+
+Count the number of subsets with a given sum
+
+Generate all binary strings of length N
+
+Generate all combinations of balanced parentheses (n pairs)
+
+Find all possible paths from (0,0) to (n-1,m-1) in a grid
+
+Recursive string permutations
+
+Letter combinations of a phone number (LeetCode #17)
+
+Subset sum problem (LeetCode #78, #90 variants)
+
+Combination sum (LeetCode #39, #40)
+
+⚙️ Stage 3: Classic Backtracking Problems (Structured Search)
+
+Goal: Apply recursion to constraint satisfaction & search problems.
+
+Focus on: backtracking steps — choose → explore → unchoose (undo).
+
+N-Queens Problem
+
+Rat in a Maze problem
+
+Sudoku Solver
+
+Word Search (LeetCode #79)
+
+Generate all permutations of distinct elements
+
+Generate all unique permutations (LeetCode #47)
+
+Combination Sum II (LeetCode #40)
+
+Palindrome Partitioning (LeetCode #131)
+
+Restore IP Addresses (LeetCode #93)
+
+Generate valid parenthesis combinations (LeetCode #22)
+
+🧠 Stage 4: Intermediate → Conceptual Jump
+
+Goal: Build intuition and optimization understanding (pruning, memoization, recursion state).
+
+Focus on: recursion + constraints, pruning invalid states early, memoization.
+
+Word Break (LeetCode #139)
+
+Subsets with duplicates (LeetCode #90)
+
+Permutations of numbers with repetition
+
+Combination Sum III (LeetCode #216)
+
+Letter Case Permutation (LeetCode #784)
+
+Generate Gray Code (LeetCode #89)
+
+Target Sum (LeetCode #494)
+
+Expression Add Operators (LeetCode #282)
+
+Beautiful Arrangement (LeetCode #526)
+
+Generate all unique BSTs (LeetCode #95)
+
+🧩 Stage 5: Advanced / Conceptual + Optimization Level
+
+Goal: Tackle complex state recursion, DFS with constraints, and optimization via memoization.
+
+Focus on: recursion with dynamic programming, graph traversal, constraint recursion.
+
+Word Search II (LeetCode #212 — using Trie + Backtracking)
+
+Partition to K Equal Sum Subsets (LeetCode #698)
+
+Matchsticks to Square (LeetCode #473)
+
+Combination Sum IV (LeetCode #377)
+
+Path Sum II (LeetCode #113)
+
+Restore Subsequences (Custom — count all increasing subsequences)
+
+Unique Paths III (LeetCode #980)
+
+Sudoku Solver II (optimized version)
+
+Maximum Score Words Formed by Letters (LeetCode #1255)
+
+Word Ladder II (LeetCode #126 — recursion + BFS hybrid)
+
+💡 Bonus Stage: Thinking Like a Recursive Designer
+
+Goal: Build recursive intuition — "how to break a problem into smaller parts".
+
+Implement Merge Sort and Quick Sort recursively
+
+Implement Recursive Tree Traversals (inorder, preorder, postorder)
+
+Print all paths from root to leaf in a binary tree
+
+Print all root-to-leaf paths summing to a given number (LeetCode #113)
+
+Serialize and Deserialize a binary tree recursively
+
+Generate subsets of size k (combinations)
+
+Recursively flatten nested arrays / lists
+
+K-th permutation sequence (LeetCode #60)
+
+Generate Power Set (bitmask + recursion)
+
+Recursively solve “Tower of Hanoi” with 3 pegs and n disks
