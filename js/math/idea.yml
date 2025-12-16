@@ -1,0 +1,189 @@
+🟢 Level 1: Absolute Basics (Must-Know)
+
+1. Number System
+
+Natural, whole, integers -----------------------------done
+
+Even / odd ---------------------------done
+
+Prime numbers ------------------------done
+
+Factors & multiples ------------------------- done
+
+GCD / LCM ------------------------done
+
+Divisibility rules --------------------done
+
+2. Arithmetic
+
+Addition, subtraction, multiplication, division ----------------- done
+
+Modulo (%) operation
+
+Integer vs floating division ------------------------done
+
+Overflow & limits (INT_MAX, INT_MIN) ---------------------done
+
+3. Powers & Roots
+
+Exponents
+
+Fast Exponentiation
+
+Square root, cube root
+
+Fast power concept (a^b in log b)
+
+🟡 Level 2: Core Maths for DSA (Very Important)
+
+Used daily in coding problems
+
+4. Algebra Basics
+
+Linear expressions
+
+Equations
+
+Linear Diophantine equation
+
+Variables & substitution
+
+Inequalities
+
+5. Logarithms ⭐
+
+log rules
+
+Why log n appears in algorithms
+
+log2(n), log10(n)
+
+Binary search complexity
+
+6. Fractions & Ratios
+
+Simplification
+
+Ratios & proportions
+
+Percentage calculations
+
+7. Modular Arithmetic ⭐
+
+(a + b) % m
+
+(a × b) % m
+
+Negative modulo
+
+Modular inverse (basic idea)
+
+🟠 Level 3: Problem-Solving Maths (Interview Level)
+
+Separates average from good DSA candidates
+
+8. Combinatorics (Counting)
+
+Permutations
+
+Combinations
+
+nCr, nPr
+
+Counting arrangements
+
+Pigeonhole principle
+
+9. Probability (Basics)
+
+Simple probability
+
+Conditional probability
+
+Expected value (important in DP intuition)
+
+10. Series & Progressions
+
+Arithmetic Progression (AP)
+
+Geometric Progression (GP)
+
+Sum of series
+
+Used in complexity analysis
+
+🔵 Level 4: Advanced DSA Maths (Selective but Powerful)
+
+Needed for advanced problems & competitive programming
+
+11. Number Theory ⭐⭐⭐
+
+Sieve of Eratosthenes ---------------------done
+
+Prime factorization 
+
+Euclidean algorithm -----------------------doen
+
+Modular exponentiation
+
+Euler’s Totient function-----------------------done
+
+Fermat’s Little Theorem -------------------- done
+
+12. Bit Manipulation Maths ⭐⭐⭐
+
+Binary representation
+
+Bitwise operators (& | ^ ~ << >>)
+
+Power of 2 tricks
+
+XOR properties
+
+13. Matrix Mathematics
+
+Matrix multiplication
+
+Matrix exponentiation
+
+Used in DP optimization
+
+🟣 Level 5: Geometry (Only What’s Needed)
+
+Mostly for competitive programming
+
+14. Coordinate Geometry
+
+Distance formula
+
+Slope
+
+Line equations
+
+15. Computational Geometry (Basics)
+
+Area of triangle
+
+Orientation of points
+
+Convex hull (basic idea)
+
+🔴 Level 6: Mathematical Thinking (Elite Level)
+
+Makes you fast & accurate
+
+16. Recurrence Relations
+
+Solving recurrences
+
+Master theorem (intro)
+
+17. Discrete Mathematics (Essentials)
+
+Sets
+
+Relations
+
+Functions
+
+Graph theory basics
