@@ -18,7 +18,7 @@ Divisibility rules --------------------done
 
 Addition, subtraction, multiplication, division ----------------- done
 
-Modulo (%) operation
+Modulo (%) operation ----------------------------done
 
 Integer vs floating division ------------------------done
 
@@ -26,11 +26,11 @@ Overflow & limits (INT_MAX, INT_MIN) ---------------------done
 
 3. Powers & Roots
 
-Exponents
+Exponents -------------------------- done
 
 Fast Exponentiation
 
-Square root, cube root
+Square root, cube root ---------------------------- done
 
 Fast power concept (a^b in log b)
 
@@ -54,19 +54,11 @@ Inequalities
 
 log rules
 
-Why log n appears in algorithms
+Why log n appears in algorithms 
 
 log2(n), log10(n)
 
 Binary search complexity
-
-6. Fractions & Ratios
-
-Simplification
-
-Ratios & proportions
-
-Percentage calculations
 
 7. Modular Arithmetic ⭐
 
@@ -75,8 +67,6 @@ Percentage calculations
 (a × b) % m
 
 Negative modulo
-
-Modular inverse (basic idea)
 
 🟠 Level 3: Problem-Solving Maths (Interview Level)
 
@@ -94,23 +84,13 @@ Counting arrangements
 
 Pigeonhole principle
 
-9. Probability (Basics)
-
-Simple probability
-
-Conditional probability
-
-Expected value (important in DP intuition)
-
 10. Series & Progressions
 
-Arithmetic Progression (AP)
+Arithmetic Progression (AP) ----------------------------- done
 
 Geometric Progression (GP)
 
-Sum of series
-
-Used in complexity analysis
+Sum of series ---------------------------------done
 
 🔵 Level 4: Advanced DSA Maths (Selective but Powerful)
 
@@ -120,7 +100,13 @@ Needed for advanced problems & competitive programming
 
 Sieve of Eratosthenes ---------------------done
 
-Prime factorization 
+Prime factorization ----------------------------done
+
+Optimal Trial Division
+
+Smallest Prime Factor (SPF) sieve.
+
+Factorize in O(log n)
 
 Euclidean algorithm -----------------------doen
 
@@ -132,17 +118,17 @@ Fermat’s Little Theorem -------------------- done
 
 12. Bit Manipulation Maths ⭐⭐⭐
 
-Binary representation
+Binary representation -------------------------------done
 
-Bitwise operators (& | ^ ~ << >>)
+Bitwise operators (& | ^ ~ << >>) ---------------------------done
 
-Power of 2 tricks
+Power of 2 tricks -------------------------- done
 
-XOR properties
+XOR properties ------------------------------ done
 
 13. Matrix Mathematics
 
-Matrix multiplication
+Matrix multiplication ----------------------------- done
 
 Matrix exponentiation
 
@@ -174,7 +160,7 @@ Makes you fast & accurate
 
 16. Recurrence Relations
 
-Solving recurrences
+Solving recurrences ---------------------done
 
 Master theorem (intro)
 

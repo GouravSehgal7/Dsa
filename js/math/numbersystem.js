@@ -29,6 +29,29 @@ class  BasicMath {
         return this.GCD2(a,b);
     }
 
+    // concept = 
+
+    BinaryExponentiationRecursion1(a,b){
+        if(b===0) return 1;
+        if(b===1) return a;
+        let op = this.BinaryExponentiationRecursion1(a,Math.floor(b/2));
+        if(b&1){
+            return op*op*a;
+        }else{
+            return op*op;
+        }
+    }
+
+    BinaryExponentiationRecursion2(a,b){
+        let res = 1;
+        while (b > 0) {
+            if (b & 1) res *= a;
+            a *= a;
+            b >>= 1;
+        }
+        return res;
+    }
+
 
 }
 
