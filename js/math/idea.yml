@@ -28,11 +28,11 @@ Overflow & limits (INT_MAX, INT_MIN) ---------------------done
 
 Exponents -------------------------- done
 
-Fast Exponentiation
+Fast Exponentiation -------------------------------- done
 
 Square root, cube root ---------------------------- done
 
-Fast power concept (a^b in log b)
+Fast power concept (a^b in log b) --------------------------done
 
 🟡 Level 2: Core Maths for DSA (Very Important)
 
@@ -40,33 +40,29 @@ Used daily in coding problems
 
 4. Algebra Basics
 
-Linear expressions
+Linear expressions ------------------------------------done
 
-Equations
+Equations ----------------------------------------done
 
-Linear Diophantine equation
+Variables & substitution -------------------------------------done
 
-Variables & substitution
-
-Inequalities
+Inequalities ----------------------------------------done
 
 5. Logarithms ⭐
 
-log rules
+log rules --------------------------------------done
 
-Why log n appears in algorithms 
+log2(n), log10(n) ----------------------------------done
 
-log2(n), log10(n)
-
-Binary search complexity
+Binary search complexity ----------------------------------------done
 
 7. Modular Arithmetic ⭐
 
-(a + b) % m
+(a + b) % m ------------------------- done
 
-(a × b) % m
+(a × b) % m -----------------------------done
 
-Negative modulo
+Negative modulo --------------------------done
 
 🟠 Level 3: Problem-Solving Maths (Interview Level)
 
@@ -88,7 +84,7 @@ Pigeonhole principle
 
 Arithmetic Progression (AP) ----------------------------- done
 
-Geometric Progression (GP)
+Geometric Progression (GP) --------------------------------------done
 
 Sum of series ---------------------------------done
 
@@ -106,11 +102,11 @@ Optimal Trial Division
 
 Smallest Prime Factor (SPF) sieve.
 
-Factorize in O(log n)
+Factorize in O(log n) ----------------------------------done
 
 Euclidean algorithm -----------------------doen
 
-Modular exponentiation
+Modular exponentiation ---------------------------done
 
 Euler’s Totient function-----------------------done
 
@@ -130,7 +126,7 @@ XOR properties ------------------------------ done
 
 Matrix multiplication ----------------------------- done
 
-Matrix exponentiation
+Matrix exponentiation 
 
 Used in DP optimization
 
