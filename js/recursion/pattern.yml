@@ -1,0 +1,171 @@
+1️⃣ Binary Choice (Include / Exclude)
+
+AKA: Subset / Decision recursion
+
+Concept
+
+    Each element gives independent yes/no choice.
+
+    Question signal
+
+    “Take it or not?”
+    “Choose or skip?”
+
+    Tree shape
+
+    Binary (2ⁿ)
+
+    Examples
+
+    Subsets / Subsequences
+
+    Partition array
+
+    Subset Sum
+
+    Equal Partition
+
+    Combination Sum (variant)
+
+2️⃣ Assignment / Bucket Pattern
+
+AKA: Distribute elements
+
+Concept
+
+    Each element must go into exactly one bucket.
+
+    Question signal
+
+    “Distribute”, “Assign”, “Group”, “Color”
+
+    Tree shape
+
+    kⁿ (k = number of buckets)
+
+    Examples
+
+    Partition into k subsets
+
+    Graph coloring
+
+    Load balancing
+
+    Palindrome partitioning (string → buckets)
+
+3️⃣ Range / Index-Based (Loop Simulation)
+
+AKA: Subarray recursion
+
+Concept
+
+    Solution is defined by indices, not choices.
+
+    Question signal
+
+    “Contiguous”, “window”, “range”
+
+    Tree shape
+
+    Linear / layered
+
+    Examples
+
+    Subarrays
+
+    Matrix traversal
+
+    Spiral print
+
+    Sliding window recursion
+
+
+4️⃣ Permutation / Ordering Pattern
+
+AKA: Fix & recurse
+
+Concept
+
+    Order matters — positions matter.
+
+    Question signal
+
+    “Arrange”, “Order”, “Permutations”
+
+    Tree shape
+
+    Examples
+
+    Permutations of array/string
+
+    N-Queens
+
+    Sudoku
+
+    Word search
+
+5️⃣ Combination Pattern
+
+AKA: Choose K items
+
+Concept
+
+    Pick fixed number, order doesn’t matter.
+
+    Question signal
+
+    “Choose k”, “Combinations”
+
+    Examples
+
+    nCk
+
+    Phone keypad
+
+    Letter combinations
+
+    Combination Sum II
+
+6️⃣ Divide & Conquer
+
+AKA: Break into subproblems
+
+Concept
+
+    Split → solve → merge.
+
+    Question signal
+
+    “Merge”, “Sort”, “Maximum”, “Range”
+
+    Examples
+
+    Merge Sort
+
+    Quick Sort
+
+    Binary Search
+
+    Max / Min in array
+
+7️⃣ Backtracking with Constraints (Pruning)
+
+AKA: Smart recursion
+
+Concept
+
+    Explore only valid states.
+    
+    Question signal
+    
+    “Valid”, “Safe”, “Constraints”
+    
+    Examples
+    
+    N-Queens
+    
+    Sudoku
+    
+    Rat in a Maze
+    
+    Word Search
