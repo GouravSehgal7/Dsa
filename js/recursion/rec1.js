@@ -24,6 +24,17 @@ function sumarray(i,arr,sum) {
     return sumarray(i+1,arr,sum)
 }
 
+function sumarr2(arr,i=0){
+    // base
+    if(i===arr.length) return 0;
+    // recurstion
+    return arr[i] + sumarr2(arr,i+1);
+}
+let a = [1,2,4,3]
+let s = sumarr2(a)
+console.log(s);
+
+
 function lltraverse(head) {
     let node = head
     console.log(node.val);
@@ -88,8 +99,8 @@ let arr = [1,23,3,4,5,6]
 // let m = linearRecursive(arr,0,arr[0]);
 // console.log(m);
 // xtothepowern(2,10,1,0);
-let isnum = binarysearch(arr,0,arr.length-1,5)
-console.log(isnum);
+// let isnum = binarysearch(arr,0,arr.length-1,5)
+// console.log(isnum);
 
 
 

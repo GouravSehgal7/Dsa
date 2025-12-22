@@ -1,14 +1,15 @@
 class Recursion_problem {
 
-    partitionElementArray(arr,resopnce){
+    partitionElementArray(arr,st,ed,newarr= []){
         // base case
-
+        if(st===ed){
+            console.log(newarr);
+            newarr.push(arr[st])
+            return;
+        }
         // program
-
+        let mid = (ed+1)/2
         // recursion
-        
-        // backtrack logic
-
     }
 
     SubSet(arr=[],newarr=[],i= 0){
@@ -44,19 +45,24 @@ class Recursion_problem {
         // this.SubArray(arr,[],st+1,st+1)
     }
 
-    ArrayPermutation(arr=[]){
+    ArrayPermutation(arr=[],i=0,out=[]){
         // base
-
-        // program
-
-        // recursion
-
-        // backtrack logic
-
+        if(i>=arr.length){
+            out.push([...arr]);
+            console.log(out);
+            return;
+        }
+        for (let j = 0; j <arr.length; j++) {
+            [arr[i],arr[j]] = [arr[j],arr[i]]
+            this.ArrayPermutation(arr,i+1,out);
+            [arr[i],arr[j]] = [arr[j],arr[i]]
+        }
     }
 
+
 }
+
 let rec = new Recursion_problem();
 let val = [1,2,3]
-rec.SubArray(val)
+rec.ArrayPermutation(val)
 

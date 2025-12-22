@@ -31,7 +31,7 @@ public class patterns {
         for(int i = 0;i<arr.length;i++){
             // hm.put(num, hm.getOrDefault(num, 0)+1);
             ArrayList<Integer> am = new ArrayList<>();
-            am.get(i)
+            am.get(i);
             // hm.putIfAbsent(null, null)
             hm.put(i, arr[i] );
         }

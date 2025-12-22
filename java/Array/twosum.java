@@ -1,4 +1,4 @@
-import java.util.*;;
+import java.util.*;
 public class twosum {
 
     // public static int[] Twosum(int []arr,int target){
