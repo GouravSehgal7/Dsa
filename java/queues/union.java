@@ -85,7 +85,6 @@ public class union {
         }
 
         return ar;
-        
         // via one set and one array
     }
 

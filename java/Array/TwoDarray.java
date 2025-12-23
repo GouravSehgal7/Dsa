@@ -84,7 +84,34 @@ public class TwoDarray {
     }
 
     public static void spiralPrint(int arr[][]){
-        
+        int str = 0;
+        int edr = arr.length-1;
+        int stc = 0;
+        int edc = arr[0].length -1;
+        while (str<=edr && stc<=edc ){
+            for(int i = stc;i<=edc;i++){
+                System.out.println(arr[str][i]);
+            }
+            for(int i = str+1;i<=edr;i++){
+                System.out.println(arr[i][edc]);
+            }
+            for(int i = edc-1;i>=stc;i--){
+                if(str==edr){
+                    break;
+                }
+                System.out.println(arr[edr][i]);
+            }
+            for(int i = edr-1;i>=str+1;i--){
+                if(stc==edc){
+                    break;
+                }
+                System.out.println(arr[i][stc]);
+            }
+            str++;
+            stc++;
+            edr--;
+            edc--;
+        }
     }
 
     public static void absDiagonalDiff1(int arr[][]){
@@ -140,89 +167,59 @@ public class TwoDarray {
         System.out.println(max);
     }
 
-    public static void SearchInCompleteSorted(int arr[][]){
-        
-    }
-
-
-
-    public boolean searchMatrix(int[][] matrix, int target) {
-        // approach 1 linear search
-        // approach 2 make a new array and copy all the elem to it and use binary search
-        // approach 3 -:
-            // choose row 1 check if result exist in min and max value if yes then use binary search
-
-            // for(int i = 0; i<matrix.length;i++){
-            //     if(target >= matrix[i][0] && target<=matrix[i][matrix[i].length-1]){
-            //         int st = 0;
-            //         int end = matrix[i].length-1;
-            //         while(st<=end){
-            //             int mid = (st+end)/2;
-            //             if(matrix[i][mid] == target){
-            //                 return true;
-            //             }
-            //             else if(target>matrix[i][mid]){
-            //                 st = mid+1;
-            //             }
-            //             else{
-            //                 end = mid -1;
-            //             }
-            //         }
-            //     }
-            // }
-            // return false;
-
-        // approach 4 :- 
-            // check from c1 = 0 st , end
-            // find mid and check if it exit in that array by ckeck max and min val 
-            
-            
-            int st = 0;
-            int end = matrix.length-1;
-            while(st<=end){
-                int mid = (st+end)/2;
-                if(matrix[mid][0] <= target && matrix[mid][matrix[mid].length-1]>=target){
-                    int s = 0;
-                    int ed = matrix[mid].length-1;
-                    while(s<=ed){
-                        int m = (s+ed)/2;
-                        if(matrix[mid][m] == target){
-                            return true;
-                        }
-                        else if(target>matrix[mid][m]){
-                            s = m+1;
-                        }
-                        else{
-                            ed = m -1;
-                        }
+    // non overlaping rows
+    // binary search approach in col and then row
+    public static void SearchInCompleteSorted(int arr[][],int t){
+        int st = 0;
+        int ed = arr.length-1;
+        while(st<=ed){
+            int mid = st + (ed-st)/2;
+            if(t>=arr[mid][0] && t<=arr[mid][arr[mid].length-1]){
+                int l = 0;
+                int h = arr[mid].length-1;
+                while (l<=h) {
+                    int m = l + (h-l)/2;
+                    if(arr[mid][m]==t){
+                        System.out.println(t + " found at row " + mid + " col " + m);
+                        return;
+                    }else if(arr[mid][m]<t){
+                        l = m + 1;
+                    }else{
+                        h = m-1;
                     }
-                    return false;
                 }
-                else if(matrix[mid][0] > target){
-                    end = mid-1;
-                }
-                else if(matrix[mid][0] < target && matrix[mid][matrix[mid].length-1]<target){
-                    st = mid+1;
-                }
-
+                return;
+            }else if(t<arr[mid][0]){
+                ed = mid-1;
+            }else{
+                st=mid+1;
             }
-        return false;
+        }
     }
 
-    // binary search in cell
-    public static void searchinsorted(int [][] arr,int target){
-        // lowese is at arr[0][0]
-        // largest is at arr[m-1][n-1]
-        
+    // overlaping rows
+    public static void stairCase(int arr[][], int t){
+        // start with edges of matrix and decide where to move depending upon the sorted manner of value mostly top left sa start karo
+        // time complexity 0(m+n)
+        int r = 0;
+        int c = arr[0].length -1;
+        while (r<arr.length && c>=0) {
+            if(arr[r][c]>t){
+                c--;
+            }else if(arr[r][c]<t){
+                r++;
+            }else if(arr[r][c] == t){
+                System.out.println(t + " found at row "+r+" and column "+c);
+            }
+        }
     }
-
 
     public static void main(String[] args) {
         int arr[][] = {{1,2,3},{4,5,6},{7,8,9}};
         // printH(arr);
         // linearSearch(arr, 8);
         
-        maxcolsum(arr);
+        spiralPrint(arr);
     }
     
 }
