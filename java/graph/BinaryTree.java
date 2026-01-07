@@ -28,8 +28,6 @@ public class BinaryTree {
         root.right = BuildTree(arr);
         return root;
     }
-    
-
     // inorder -> left - root - right
     public static void inorder(Node root){
         if(root == null){

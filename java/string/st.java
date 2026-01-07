@@ -44,21 +44,39 @@ public class st {
 System.out.println(cnt);
     }
 
-    // public static void findcount(int n){
-    //     for(int i = 1;i<11;i++){
-    //         int cnt = n*i;
-    //     }
-    // }
+    public static void LongestPrefixSuffixLen(String s){
+        // bruit force
+        // constrain
+        // len suffix == len prefix
+        //  value == same
+        // do not take whole string 
+        // overlap allowed
+        String prefix = "";
+        String suffix = "";
+        int st = 1;
+        int ed = s.length()-1;
+        int len = 0;
+        while (st<s.length()-1 && ed > 1) {
+            prefix = s.substring(0,st);
+            suffix = s.substring(ed, s.length());
+            if(prefix.equals(suffix)){
+                len = Math.max(len, prefix.length());
+            }
+            st++;
+            ed--;
+        }
+        System.out.println(len);
+        return ;
+    }
+
+    public static void KPM(){
+
+    }
 
 
     public static void main(String[] args) {
-        // String s = "000110111100";
-        // for(int i = 0; i<s.length();i+=2){
-        //         if ("00".equals(String.valueOf(s.charAt(i))+String.valueOf(s.charAt(i+1)))) System.out.print("A ");
-        //         if ("01".equals(String.valueOf(s.charAt(i))+String.valueOf(s.charAt(i+1)))) System.out.print("T ");
-        //         if ("10".equals(String.valueOf(s.charAt(i))+String.valueOf(s.charAt(i+1)))) System.out.print("C ");
-        //         if ("11".equals(String.valueOf(s.charAt(i))+String.valueOf(s.charAt(i+1)))) System.out.print("G ");
-        // }
-        NumberOFPrime(11);
+        String a= "abcdrabcd";
+        LongestPrefixSuffixLen(a);
     }
+
 }

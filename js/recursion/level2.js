@@ -1,17 +1,5 @@
 class Recursion_problem {
 
-    partitionElementArray(arr,st,ed,newarr= []){
-        // base case
-        if(st===ed){
-            console.log(newarr);
-            newarr.push(arr[st])
-            return;
-        }
-        // program
-        let mid = (ed+1)/2
-        // recursion
-    }
-
     SubSet(arr=[],newarr=[],i= 0){
         // base case
         if(i==arr.length){
@@ -42,7 +30,6 @@ class Recursion_problem {
         newarr.push(arr[ed]);
         console.log(newarr);
         this.SubArray(arr,newarr,st,ed+1);
-        // this.SubArray(arr,[],st+1,st+1)
     }
 
     ArrayPermutation(arr=[],i=0,out=[]){
@@ -58,6 +45,9 @@ class Recursion_problem {
             [arr[i],arr[j]] = [arr[j],arr[i]]
         }
     }
+
+
+    
 
 
 }

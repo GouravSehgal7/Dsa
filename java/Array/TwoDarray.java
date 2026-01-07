@@ -167,9 +167,9 @@ public class TwoDarray {
         System.out.println(max);
     }
 
-    // non overlaping rows
-    // binary search approach in col and then row
     public static void SearchInCompleteSorted(int arr[][],int t){
+        // non overlaping rows
+        // binary search approach in col and then row
         int st = 0;
         int ed = arr.length-1;
         while(st<=ed){
@@ -197,8 +197,8 @@ public class TwoDarray {
         }
     }
 
-    // overlaping rows
     public static void stairCase(int arr[][], int t){
+        // overlaping rows
         // start with edges of matrix and decide where to move depending upon the sorted manner of value mostly top left sa start karo
         // time complexity 0(m+n)
         int r = 0;
@@ -213,6 +213,7 @@ public class TwoDarray {
             }
         }
     }
+
 
     public static void main(String[] args) {
         int arr[][] = {{1,2,3},{4,5,6},{7,8,9}};
