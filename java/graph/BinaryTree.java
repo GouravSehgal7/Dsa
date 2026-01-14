@@ -102,7 +102,6 @@ public class BinaryTree {
     }
     
     static int sum = 0;
-
     public static int sum(Node root){
         if(root == null){
             return 0;

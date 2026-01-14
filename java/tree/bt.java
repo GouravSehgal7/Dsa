@@ -1,8 +1,6 @@
 package tree;
 import java.util.LinkedList;
 import java.util.Queue;
-
-import recursion.recursuion;
 public class bt {
 
     public static class Node {
@@ -192,8 +190,172 @@ public class bt {
         leaftreeroot(root.right);
         return nodesum == leafsum ;
     }
-
     
+    public static class Sumclass {
+        int nodesum;
+        int leafsum;
+        Sumclass(int l , int n){
+            this.leafsum = n;
+            this.nodesum = n;
+        }  
+    }
+
+    public static Sumclass leafsum(Node root){
+        Sumclass s = new Sumclass(0, 0);
+        if (root == null) {
+            return s;
+        }
+        if(root.left == null && root.right == null){
+            s.leafsum+=root.data;
+        }else{
+            s.nodesum+=root.data;
+        }
+        Sumclass l =  leafsum(root.left);
+        Sumclass r = leafsum(root.right);
+        s.leafsum += l.leafsum+r.leafsum;
+        s.nodesum += l.nodesum+ r.nodesum;
+        return s;
+    }
+
+    public static class Sum {
+        int leftsum;
+        int rightsum;
+        Sum(int ls,int rs){
+            this.leftsum = ls;
+            this.rightsum = rs;
+        }
+    }
+
+    public static void zigzag(Node root){
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+        boolean iseven = false;
+        while (!q.isEmpty()) {
+            Node n = q.poll();
+            if(n != null){
+                System.out.println(n.data);
+                if(iseven){
+                    if(n.left != null){
+                        q.add(n.left);
+                    }
+                    if (n.right!=null) {
+                        q.add(n.right);
+                    }
+                }else{
+                    if(n.right != null){
+                        q.add(n.right);
+                    }
+                    if (n.left!=null) {
+                        q.add(n.left);
+                    }
+                }
+            }else{
+                iseven = !iseven;
+                if (!q.isEmpty()) {
+                    q.add(null);
+                }
+            }
+            
+        }
+        return;
+    }
+
+
+    public static void left(Node root){
+        while (root.left.left!= null) {
+            System.out.println(root.data);
+        }
+    }
+    public static void right(Node root){
+        if (root.right == null) {
+            return;
+        }
+        right(root.right);
+        System.out.println(root.data);
+    }
+    public static void leaf(Node root){
+        if(root == null){
+            return;
+        }
+        if(root.left == null && root.right == null){
+            System.out.println(root.data);
+        }
+        leaf(root.left);
+        leaf(root.right);
+    }
+    
+    public static class sumpath {
+        int sum;
+        int height;
+        sumpath(int sum,int hight){
+            this.sum = sum;
+            this.height = hight;
+        }
+    }
+    public static sumpath sumlongestpath(Node root){
+        if(root == null) return new sumpath(0,0);
+        sumpath left = sumlongestpath(root.left);
+        sumpath right = sumlongestpath(root.right);
+        
+        if(left.height>right.height){
+            int h = left.height+1;
+            int s = left.sum+root.data;
+            return new sumpath(s, h);
+        }
+        return new sumpath(right.sum+root.data, right.height+1);
+    }
+
+    public static Node LCA(Node root,int n1 , int n2){
+        if(root == null) return null;
+        if(root.data == n1 || root.data == n2){
+            return root;
+        }
+        Node l = LCA(root.left, n1, n2);
+        Node r = LCA(root.right, n1, n2);
+        if(l != null && r != null){
+            return root;
+        }else if (l!=null && r==null){
+            return l;
+        }else if (r !=null && l==null){
+            return r;
+        }else{
+            return null;
+        }
+    }
+
+    public static Node KthCA(Node root,Node r, int k ){
+        if(root == null) return null;
+        if(k == 0) return root;
+        Node lef = KthCA(root.left,r,k);
+        Node rig = KthCA(root.right,r,k);
+        if (root == r) {
+            return r;
+        }
+        if(lef != null && rig != null){
+            k--;
+            return root;
+        }else if(lef != null && rig == null){
+            k--;
+            return lef;
+        }else if(rig != null && lef == null){
+            k--;
+            return rig;
+        }else return null;
+    }
+
+    public static void BTtoLL(Node root){
+        if(root == null){
+            return ;
+        }
+        BTtoLL(root.right);
+        BTtoLL(root.left);
+        root.left = null;
+        
+    }
+
+
+
 
     public static void main(String[] args) {
         int arr[] = {3,2,-1,-1,2,3,-1,-1,1,-1,-1};
@@ -201,7 +363,7 @@ public class bt {
         // System.out.println(r.data);
         // postorder(r);
         // levelOrder(r);
-        System.out.println(leaftreeroot(r));
+        zigzag(r);
         // System.out.println(maxnode(r));
         
 

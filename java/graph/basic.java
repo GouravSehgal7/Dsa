@@ -226,11 +226,7 @@ public class basic {
         }
         
     }
-
-    public static void TopologicalSort(){
-        
-    }
-
+    
     public class MatrixGraph {
         int u,v,w;
         ArrayList<ArrayList<Integer>> am = new ArrayList<>();
