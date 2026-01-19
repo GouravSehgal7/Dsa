@@ -354,9 +354,6 @@ public class bt {
         
     }
 
-
-
-
     public static void main(String[] args) {
         int arr[] = {3,2,-1,-1,2,3,-1,-1,1,-1,-1};
         Node r = Buildtree(arr);
@@ -365,8 +362,6 @@ public class bt {
         // levelOrder(r);
         zigzag(r);
         // System.out.println(maxnode(r));
-        
-
     }
     
 }

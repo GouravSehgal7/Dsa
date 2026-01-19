@@ -1,6 +1,6 @@
 class Recursion_problem {
 
-    SubSet(arr=[],newarr=[],i= 0){
+    SubSetPrint(arr=[],newarr=[],i= 0){
         // base case
         if(i==arr.length){
             console.log(newarr);
@@ -17,6 +17,17 @@ class Recursion_problem {
         newarr.pop()
         // exclude backtrack
         this.SubArray(arr,newarr,i+1);
+    }
+
+    SubsetArray(arr = [],newarr = [],final = [], i = 0){
+        if(i === arr.length){
+            final.push([...newarr]);
+            return
+        }
+        newarr.push(arr[i])
+        this.SubsetArray(arr,newarr,final,i+1)
+        newarr.pop();
+        this.SubsetArray(arr,newarr,final,i+1)
     }
 
     SubArray(arr=[],newarr=[],st = 0,ed = 0){
@@ -46,13 +57,28 @@ class Recursion_problem {
         }
     }
 
+    SubsequencesString(s="",ar=[],r="",i=0){
+        if(i === s.length){
+            ar.push(r)
+            return;
+        }
+        r+=s[i];
+        this.SubsequencesString(s,ar,r,i+1);
+        r = r.substring(0, r.length - 1);
+        this.SubsequencesString(s,ar,r,i+1);
+    }
 
+    PermuttionString(s = "",arr = [],r = "",i = 0){
+
+    }
     
-
-
 }
 
 let rec = new Recursion_problem();
 let val = [1,2,3]
-rec.ArrayPermutation(val)
+
+s = "abc"
+ar  = [];
+rec.SubArray(val,ar)
+// console.log(ar)
 

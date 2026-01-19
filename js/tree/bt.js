@@ -20,8 +20,6 @@ function BuildTree(arr) {
         return null
     }
     let node = new Node(arr[i])
-
-
 }
 
 function main(params) {

@@ -30,15 +30,15 @@ Goal: Get comfortable with recursion trees, branching, and multiple recursive ca
 
 Focus on: recursion tree visualization and understanding branching paths.
 
-Print all subsequences of a string
+Print all subsequences of a string --------------------------------------- done>>
 
-Print all subsets of an array ------------------------------------------------- done >>
+Print all subsets of an array  -------------------------------------------done >>
 
-Count the number of subsets with a given sum
+Count the number of subsets with a given sum 
 
-Generate all binary strings of length N
+Generate all binary strings of length N --------------------------------------- done>>
 
-Generate all combinations of balanced parentheses (n pairs)
+Generate all combinations of balanced parentheses (n pairs) ---------------------------------------- done>>
 
 Find all possible paths from (0,0) to (n-1,m-1) in a grid
 
@@ -151,7 +151,3 @@ K-th permutation sequence (LeetCode #60)
 Generate Power Set (bitmask + recursion)
 
 Recursively solve “Tower of Hanoi” with 3 pegs and n disks
-
-
-
-
