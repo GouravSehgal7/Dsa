@@ -1,4 +1,3 @@
-// import java.security.Key;
 import java.util.*;
 // import java.util.Map; 
 public class basic {
@@ -16,6 +15,7 @@ public class basic {
         void Getneighbour(T vertex);
         void DFS();
         void BFS();
+        void Dijastra();
     }
 
     static class edgeList{
@@ -44,8 +44,15 @@ public class basic {
 
         private final Map<T, List<Edge<T,U>>> map;
 
+
         public AdjacencyList() {
             this.map = new HashMap<>();
+        }
+
+
+        @Override
+        public void Dijastra(){
+
         }
 
         @Override
