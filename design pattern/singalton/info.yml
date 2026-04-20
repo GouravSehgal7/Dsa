@@ -1,0 +1,7 @@
+we want to create an object of a class only one time and use that one instance always instead of making multiple object
+
+ concept
+  1. Constructor has to be private so that no one can call it
+  2. do not allow object creation with Constructor rather create with mathod in class
+    that method should return only one created instance of class no matter how many time ran
+  3. field to store object has to be private

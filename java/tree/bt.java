@@ -354,6 +354,46 @@ public class bt {
         
     }
 
+
+    // given a binary tree and had to modify the tree where the leaf node values
+    // would be added to the value of their ancestors, and this behaviour would 
+    // continue bottom to up for all children and their ancestors and once we 
+    // complete the right subtree with modification, then do same for left and get the final root value
+    public static int Solution2(Node root){
+        if(root == null){
+            return 0;
+        }
+        int rightsum = Solution2(root.right);
+        int leftsum = Solution2(root.left);
+        return root.data+ rightsum + leftsum;
+    }
+
+    // given a binary tree and had to modify the tree where the leaf node values
+    // would be added to the value of their ancestors, and this behaviour would 
+    // continue bottom to up for all children and their ancestors and once we 
+    // complete the right subtree with modification, the value would be forwarded 
+    // to left subtree from root to leaf.
+    public static int Solution1type1(Node root){ // this only reflect to the left
+        int rightsum = Solution2(root.right);
+        root.data+=rightsum;
+        propogate(root.left, root.data);
+        return root.data;
+    }
+    public static void propogate(Node root,int val){
+        if(root == null) return;
+        root.data+=val;
+        propogate(root.left, root.data);
+        propogate(root.right, root.data);
+    }
+    public static int  Solution1type2(Node root){ // this reflect to the whole tree
+        // for right
+        int rightsum = Solution2(root.right);
+        root.data = root.data +rightsum;
+        propogate(root.left, root.data);
+        propogate(root.right, root.data);
+        return root.data;
+    }
+
     public static void main(String[] args) {
         int arr[] = {3,2,-1,-1,2,3,-1,-1,1,-1,-1};
         Node r = Buildtree(arr);
@@ -361,6 +401,7 @@ public class bt {
         // postorder(r);
         // levelOrder(r);
         zigzag(r);
+        
         // System.out.println(maxnode(r));
     }
     

@@ -5,7 +5,7 @@ public class dsu {
     public class DisjointSetunionRank{
         ArrayList<Integer> rank;
         ArrayList<Integer> parent;
-        DisjointSetunionRank(int edgesnum){
+        DisjointSetunionRank(int edgesnum){ 
             this.rank = new ArrayList<>();
             this.parent = new ArrayList<>();
             for(int i = 0; i <= edgesnum; i++){
