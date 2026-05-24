@@ -1,0 +1,246 @@
+1. Complement Transformation
+Core Idea
+
+Instead of finding:
+
+what to remove
+what to select
+
+Find:
+
+what remains
+Base Concepts After Transformation
+
+Usually becomes:
+
+sliding window
+prefix sum
+longest subarray
+fixed target sum
+Core Recognition Signal
+remove from ends
+minimum removals
+take k cards
+delete elements
+Problems
+Medium
+1658. Minimum Operations to Reduce X to Zero
+1423. Maximum Points You Can Obtain from Cards
+209. Minimum Size Subarray Sum
+Hard
+862. Shortest Subarray with Sum at Least K
+2. Prefix Difference Transformation
+Core Idea
+
+Represent subarray:
+
+prefix[r] - prefix[l]
+
+Instead of enumerating windows.
+
+Base Concepts
+prefix sum
+hashmap
+modulo arithmetic
+frequency counting
+Recognition Signals
+subarray sum
+count subarrays
+equal 0 and 1
+divisible by k
+binary array
+Problems
+Medium
+560. Subarray Sum Equals K
+525. Contiguous Array
+974. Subarray Sums Divisible by K
+930. Binary Subarrays With Sum
+1248. Count Number of Nice Subarrays
+Hard
+1074. Number of Submatrices That Sum to Target
+3. Monotonic Window Transformation
+Core Idea
+
+Convert condition into:
+
+grow window
+shrink window
+
+using monotonicity.
+
+Base Concepts
+dynamic sliding window
+frequency map
+two pointers
+Recognition Signals
+at most k
+longest valid
+minimum valid
+distinct chars
+positive numbers
+Problems
+Medium
+3. Longest Substring Without Repeating Characters
+904. Fruit Into Baskets
+1004. Max Consecutive Ones III
+424. Longest Repeating Character Replacement
+Hard
+76. Minimum Window Substring
+4. Monotonic Structure Transformation
+Core Idea
+
+Instead of checking every range:
+
+Maintain:
+
+increasing/decreasing structure
+Base Concepts
+monotonic stack
+monotonic deque
+Recognition Signals
+next greater
+nearest smaller
+maximum window
+histogram
+span
+Problems
+Medium
+739. Daily Temperatures
+503. Next Greater Element II
+901. Online Stock Span
+Hard
+84. Largest Rectangle in Histogram
+239. Sliding Window Maximum
+5. Difference / Neighbor Constraint Transformation
+Core Idea
+
+Compare:
+
+adjacent windows
+adjacent states
+
+to derive invariant.
+
+Base Concepts
+algebraic cancellation
+periodicity
+gcd cycles
+grouping
+Recognition Signals
+all windows equal
+neighbor relation
+periodic
+cyclic equality
+Problems
+Medium
+2607. Make K-Subarray Sums Equal
+457. Circular Array Loop
+Hard
+995. Minimum Number of K Consecutive Bit Flips
+6. Median Optimization Transformation
+Core Idea
+
+Transform into minimizing:
+
+sum |a_i - x|
+
+Then:
+
+median is optimal.
+Base Concepts
+median property
+sorting
+greedy
+Recognition Signals
+minimum operations
+equalize array
+absolute difference
+Problems
+Medium
+462. Minimum Moves to Equal Array Elements II
+2607. Make K-Subarray Sums Equal
+Hard
+1703. Minimum Adjacent Swaps for K Consecutive Ones
+7. Binary Search on Answer Transformation
+Core Idea
+
+You cannot compute answer directly.
+
+But you can:
+
+check feasibility.
+
+So binary search the answer.
+
+Base Concepts
+monotonic feasibility
+greedy checking
+prefix sums
+Recognition Signals
+minimum possible maximum
+maximize minimum
+capacity
+speed
+split
+Problems
+Medium
+875. Koko Eating Bananas
+1011. Capacity To Ship Packages Within D Days
+Hard
+410. Split Array Largest Sum
+8. Greedy Reachability Transformation
+Core Idea
+
+Instead of exact path:
+track best reachable state.
+
+Base Concepts
+greedy interval expansion
+coverage
+Problems
+Medium
+45. Jump Game II
+55. Jump Game
+Hard
+1326. Minimum Number of Taps to Open to Water a Garden
+9. State Compression Transformation
+Core Idea
+
+Transform values into states.
+
+Example:
+
+parity
+modulo
+bitmask
+balance
+Base Concepts
+hashmap states
+prefix states
+bitmask
+Problems
+Medium
+1371. Find the Longest Substring Containing Vowels in Even Counts
+1542. Find Longest Awesome Substring
+Hard
+1915. Number of Wonderful Substrings
+10. Interval/Event Transformation
+Core Idea
+
+Convert ranges into:
+
+events
+sweeps
+
+instead of simulating all positions.
+
+Base Concepts
+line sweep
+difference array
+prefix accumulation
+Problems
+Medium
+1094. Car Pooling
+1109. Corporate Flight Bookings
+Hard
+732. My Calendar III
