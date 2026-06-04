@@ -1,5 +1,6 @@
 package dp;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -105,7 +106,7 @@ public class Basic {
             if(target == 0){
                 result.add(temp);
                 return;
-            }
+            }<
             if(target<0 || i == arr.length) return;
             temp.add(arr[i]);
             rec(arr, target-arr[i], result, temp, i);
@@ -187,9 +188,119 @@ public class Basic {
             dp[stidx] = best+nums[stidx];
             return dp[stidx];
         }
-
+        public int rec2(int nums[], int stidx){
+            if(stidx>=nums.length) return 0;
+            int max = 0;
+            int skip = rec2(nums, stidx+1);
+            int rob = rec2(nums, stidx+2);
+            max = Math.max(skip, rob+nums[stidx]);
+            return max;
+        }
+        public int memo2(int nums[], int stidx,int dp[]){
+            if(stidx>=nums.length) return 0;
+            if(dp[stidx]!=-1) return dp[stidx];
+            int skip = rec2(nums, stidx+1);
+            int rob = rec2(nums, stidx+2);
+            dp[stidx] = Math.max(skip, rob+nums[stidx]);
+            return dp[stidx];
+        }
+        // public int tabulation(int nums[]){
+        //     int dp[] = new int[nums.length];
+        //     Arrays.fill(dp, 0);
+        //     for(int i = 0;i<nums.length;i++){
+        //         dp[i] = Math.max(dp[i+1], dp[i+2]+nums[i]);
+        //     }
+        // }
     }
     
+    public static class Maximumrod {
+        public int rec1(int n , int x , int y , int z){
+            if(n == 0) return 0;
+            if(n<0) return Integer.MIN_VALUE;
+            int a = rec1(n-x, x, y, z)+1;
+            int b = rec1(n-y, x, y, z)+1;
+            int c = rec1(n-z, x, y, z)+1;
+            int ans = Math.max(a, Math.max(b, c));
+            if(ans == Integer.MIN_VALUE)
+                return Integer.MIN_VALUE;
+            return ans + 1;
+        }
+        public int memo1(int n , int x , int y , int z,int dp[]){
+            if(n == 0) return 0;
+            if(n<0) return Integer.MIN_VALUE;
+            if(dp[n] != -1) return dp[n];
+            int a = memo1(n-x, x, y, z,dp)+1;
+            int b = memo1(n-y, x, y, z,dp)+1;
+            int c = memo1(n-z, x, y, z,dp)+1;
+            int ans = Math.max(a, Math.max(b, c));
+            dp[n] = ans;
+            if(ans == Integer.MIN_VALUE)
+                return Integer.MIN_VALUE;
+            return dp[n];
+        }
+        public int tabulation1(int n , int x , int y , int z){
+            int dp[] = new int[n+1];
+            Arrays.fill(dp, Integer.MIN_VALUE);
+            dp[0] = 0;
+            for(int i = 0;i<n;i++){
+                if(i-x>=0)
+                    dp[i]= Math.max(dp[i-x]+1,dp[i]);
+                if(i-x>=0)
+                    dp[i]= Math.max(dp[i-y]+1,dp[i]);
+                if(i-x>=0)
+                    dp[i]= Math.max(dp[i-z]+1,dp[i]);
+            }
+            return dp[n];
+        }
+        // different question
+        public int rec2(int n , int []a){
+            if(n<0) return Integer.MIN_VALUE;
+            if(n == 0) return 0; 
+            int max = Integer.MIN_VALUE;
+            for(int i = 0;i<a.length;i++){
+                int res = rec2(n-a[i], a);
+                if(res != Integer.MIN_VALUE){
+                    max = Math.max(max, res+1);
+                }
+            }
+            return max;
+        }
+        public int memo2(int n , int a[], int dp[]){
+            if(n<0) return Integer.MIN_VALUE;
+            if(n == 0) return 0; 
+            if(dp[n]!= -1) return dp[n];
+            int max = Integer.MIN_VALUE;
+            for(int i = 0;i<a.length;i++){
+                int res = memo2(n-a[i], a,dp);
+                if(res != Integer.MIN_VALUE){
+                    max = Math.max(max, res + 1);
+                }
+            }
+            return dp[n] = max;
+        }
+        public int tabulation2(int n, int a[]){
+            int dp[] = new int[n+1];
+            Arrays.fill(dp,Integer.MIN_VALUE);
+            dp[0] = 0;
+            for(int i = 0;i<=n;i++){
+                for(int e : a){
+                    if(i -e >=0 &&  dp[i-e] != Integer.MIN_VALUE)
+                        dp[i] = Math.max(dp[i], dp[i-e]+1);
+                }
+            }
+            return dp[n];
+        }
+        
+    }
+
+    public static class CountDerangement{
+        public int rec(int orignal[],int temp[]){
+
+            // analyze all possible combo
+            
+
+        }
+    }
     
     public static void main(String[] args) {
         Fibonaci f = new Fibonaci();
