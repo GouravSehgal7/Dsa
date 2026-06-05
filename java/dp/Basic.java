@@ -337,8 +337,19 @@ public class Basic {
         }
     }
    
+    public static class DayandCost{
 
-    
+        public static int rec(int days[],int cost[],int i){
+
+            if(i == days.length) return 0;
+
+            rec(days, cost, i);
+
+        }
+
+    }
+
+
     public static void main(String[] args) {
         // Integer dp[][] = new Integer[wt.length][W + 1];
         Fibonaci f = new Fibonaci();
