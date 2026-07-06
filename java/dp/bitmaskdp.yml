@@ -1,0 +1,89 @@
+1. 🧩 Subsets ---------------------- done
+
+👉 LeetCode: Subsets (LeetCode 78)
+
+Concept:
+
+Generate all subsets of an array.
+
+Why important:
+First exposure to subset generation
+Bit manipulation for inclusion/exclusion
+Pattern:
+mask from 0 → (1<<n)-1
+🟢 Level 2 — Bit Manipulation Basics
+2. 🔢 Single Number III
+
+👉 Single Number III (LeetCode 260) ------------------- done
+
+Concept:
+Two numbers appear once, others twice
+Find both unique numbers using XOR + bit separation
+Why important:
+Teaches XOR + bit partitioning
+🟡 Level 3 — Subset DP Introduction
+3. 🎒 Partition to K Equal Sum Subsets ------------------------ done
+
+👉 Partition to K Equal Sum Subsets (LeetCode 698)
+
+Concept:
+Can we split array into K subsets with equal sum?
+Bitmask idea:
+dp[mask] = whether subset is valid
+Why important:
+First real DP + subset state problem
+🟡 Level 4 — Classic Bitmask DP
+4. 🧑‍🏫 Maximum Students Taking Exam
+
+👉 Maximum Students Taking Exam (LeetCode 1349)
+
+Concept:
+Seating arrangement with constraints
+Bitmask idea:
+Each row → bitmask of valid seats
+Check compatibility between masks
+Why important:
+Teaches:
+valid mask generation
+transition between masks
+🟠 Level 5 — Assignment Style DP
+5. 🧑‍💻 Minimum Cost to Assign Jobs
+
+👉 Minimum Cost to Assign Jobs (LeetCode 1946)
+
+Concept:
+Assign jobs to workers optimally
+Bitmask DP:
+dp[mask] = min cost for assigned jobs
+Why important:
+Classic assignment DP pattern
+🔴 Level 6 — Full Bitmask DP (TSP Style)
+6. 🚗 Traveling Salesman Problem (Classic)
+
+👉 Traveling Salesman Problem (LeetCode 943 / variants)
+
+Concept:
+Visit all cities once
+Return to start
+Min cost
+DP:
+dp[mask][i]
+Why important:
+Core bitmask DP foundation
+Used everywhere in graph DP
+🔴 Level 7 — Advanced Partition Bitmask
+7. 🧱 Matchsticks to Square ---------------------------- done
+
+👉 Matchsticks to Square (LeetCode 473)
+
+Concept:
+Can we form 4 equal sides using all matchsticks?
+💥 Key Idea:
+
+We try:
+
+dp[mask] = can we form valid side lengths using these sticks
+
+OR recursion:
+
+try placing each stick into 4 buckets

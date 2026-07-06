@@ -45,7 +45,7 @@ public class dsu {
             this.parent = new ArrayList<>();
             for(int i = 0; i <= edgesnum; i++){
                 this.parent.add(i);
-                this.size.add(0);
+                this.size.add(1);
             }
         }
 
@@ -63,10 +63,10 @@ public class dsu {
             if(pu == pv) return;
             if(size.get(pu) < size.get(pv)){
                 parent.set(pu, pv);
-                size.set(pv, size.get(pv)+1);
+                size.set(pv, size.get(pv)+size.get(pu));
             } else if(size.get(pu) >= size.get(pv)){
                 parent.set(pv, pu);
-                size.set(pu, size.get(pu)+1);
+                size.set(pu, size.get(pu)+size.get(pv));
             }
         }
     }
