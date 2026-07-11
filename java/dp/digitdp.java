@@ -29,9 +29,6 @@ public class digitdp {
         if (s.length() == pos) {
             return cnt;
         }
-        if(s.charAt(pos) == target){
-            cnt++;
-        }
         int lim;
         if (flag) {
             lim = s.charAt(pos) - '0';
@@ -39,8 +36,37 @@ public class digitdp {
             lim = 9;
         }
         int ans = 0;
-        for (int i = 0; i < lim; i++) {
-            ans+=s2(s, target, pos+1, flag && (i == lim), cnt+(i == lim?1:0));
+        for (int i = 0; i <= lim; i++) {
+            ans+=s2(s, target, pos+1, flag && (i == lim), cnt+(i == target?1:0));
+        }
+        return ans;
+    }
+    public static int s3(String s, int firstdig, int pos, boolean flag, boolean start){
+        if (pos== s.length()) {
+            return 1;
+        }
+        int limit;
+        if (flag) {
+            limit = s.charAt(pos)-'0';
+        }else{
+            limit = 9;
+        }
+        int ans = 0;
+        for(int i = 0;i<=limit;i++){
+            boolean newstart = start;
+            int newfirst = firstdig;
+
+            if(!newstart && i!=0)
+            {
+                newstart = true;
+                newfirst = i;
+            }
+            if (pos == s.length() - 1 && newstart) {
+                if (i != newfirst) {
+                    continue;
+                }
+            }
+            ans += s3(s, newfirst, pos+1, flag && (i == limit), newstart);
         }
         return ans;
     }
@@ -55,6 +81,8 @@ public class digitdp {
             // count 3 from 0-n 
             int val = s2(s,3,0,true,0);
             // count the numbers whose first and last digit are same
+            int cnt = s3(s, 0, 0, true, false);
+
             
         }
     }
