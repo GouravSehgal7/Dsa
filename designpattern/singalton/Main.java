@@ -1,4 +1,4 @@
-package singalton;
+package designpattern.singalton;
 
 public class Main {
     

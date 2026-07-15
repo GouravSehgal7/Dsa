@@ -106,7 +106,7 @@ public class Basic {
             if(target == 0){
                 result.add(temp);
                 return;
-            }<
+            }
             if(target<0 || i == arr.length) return;
             temp.add(arr[i]);
             rec(arr, target-arr[i], result, temp, i);
@@ -212,6 +212,19 @@ public class Basic {
         //     }
         // }
     }
+
+
+    public class  Knapsack01 {
+        public static int rec(int val[],int wt [], int W,int sum){
+
+            for(int i = 0;i<wt.length;i++){
+                
+            }
+
+
+        }
+        
+    }
     
     public static class Maximumrod {
         public int rec1(int n , int x , int y , int z){
@@ -302,58 +315,11 @@ public class Basic {
         }
     }
     
-    public static class Knapsack01 {
-        public static int rec(int wt[],int val[],int w,int i,int sum){
-            if (w == 0) return sum;
-            if (wt.length == i) return sum;
-            if (w<0) return Integer.MIN_VALUE;
-            int s1 = rec(wt, val, w-wt[i], i+1, sum+val[i]);
-            int s2 = rec(wt, val, w, i+1, sum);
-            return Math.max(s1, s2);
-        }
-        public static int memo(int wt[],int val[],int w,int i,int sum,Integer dp[][]){
-            if (w == 0) return sum;
-            if (wt.length == i) return sum;
-            if (w<0) return Integer.MIN_VALUE;
-            if (dp[i][w]!=null) {
-                return dp[i][w];
-            }
-            int s1 = rec(wt, val, w-wt[i], i+1, sum+val[i]);
-            int s2 = rec(wt, val, w, i+1, sum);
-            return dp[i][w] = Math.max(s1, s2);
-        }
-        public static int tabulation(int wt[],int val[],int w){
-            Integer dp[][] = new Integer[wt.length][w+ 1];
-            for (int i = 0; i < dp.length; i++) {
-                Arrays.fill(dp[i],-1);
-            }
-            int sum = 0;
-            for (int i = 0; i <wt.length; i++) {
-                for (int j = 0; j <= w; j++) {
-                    sum = Math.max(dp[i][j], sum);
-                }
-            }
-            return sum;
-        }
-    }
-   
-    public static class DayandCost{
-
-        public static int rec(int days[],int cost[],int i){
-
-            if(i == days.length) return 0;
-
-            rec(days, cost, i);
-
-        }
-
-    }
-
-
     public static void main(String[] args) {
-        // Integer dp[][] = new Integer[wt.length][W + 1];
         Fibonaci f = new Fibonaci();
         int n  = f.rec(3);
         System.out.println(n);
+
     }
+    
 }

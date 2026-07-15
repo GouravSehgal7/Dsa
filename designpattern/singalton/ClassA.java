@@ -1,4 +1,4 @@
-package singalton;
+package designpattern.singalton;
 // lazy way to create singoltone 
 // not thread safe only one call work but will crash for multithreading
 // means all thread will make multiple object
@@ -20,7 +20,7 @@ public class ClassA {
         }
         return instance;
     }
-
+    // two lock
     public synchronized static ClassA Getinstancesyncmultithread(){
         if(instance == null){
             synchronized(ClassA.class){
@@ -30,5 +30,11 @@ public class ClassA {
         return instance;
     }
 
-    
+    // Bill Pugh Singleton
+    private static class Holder{
+        private static final ClassA INSTANCE = new ClassA();
+    }
+    public static ClassA getbillpugh(){
+        return Holder.INSTANCE;
+    } 
 }
