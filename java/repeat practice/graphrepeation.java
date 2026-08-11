@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import dp.maskeddp;
 
 public class graphrepeation {
 
@@ -137,8 +140,71 @@ public class graphrepeation {
             }
 
         }
+    }
+
+    class MSTResult{
+        int cost;
+        ArrayList<int[]> ar;
+        MSTResult(int cost,ArrayList<int[]> ar){
+            this.cost = cost;
+            this.ar = ar;
+        }
+    }
+
+    public  MSTResult kuskrulsrep1(int V , int edges[][]){
+        // [[u,v,w]]
+        Arrays.sort(edges,(a,b)->Integer.compare(a[2], b[2]));
+        dsuRep4 d = new dsuRep4(V);
+        int cost = 0;
+        ArrayList<int []> MstEdges = new ArrayList<>();
+        for(int e[]:edges){
+            int u = e[0];
+            int v = e[1];
+            int w = e[2];
+            if(d.find(u)!=d.find(v)){
+                d.union(u, v);
+                cost+=w;
+                MstEdges.add(new int[]{u,v});
+            }
+        }
+        return new MSTResult(cost, MstEdges);
+    }
+
+    public MSTResult kuskrep2(int V,int edges[][]){
+        DSUREP2 d = new DSUREP2(V);
+        int cost = 0;
+        Arrays.sort(edges,(a,b)->Integer.compare(a[2], b[2]));
+        ArrayList<int[]> ar = new ArrayList<>();
+        for(int e[] : edges){
+            int u = e[0];
+            int v = e[1];
+            int w = e[2];
+            if(d.find(u)!=d.find(v)){
+                d.union(u, v);
+                cost+=w;
+                ar.add(new int[]{u,v});
+            }
+        }
+        return new MSTResult(cost, ar);
+    }
 
 
+    public MSTResult kuskrep3(int V,int edges[][]){
+        DSUREP2 d = new DSUREP2(V);
+        int cost = 0;
+        ArrayList<int []> ar = new ArrayList<>();
+        Arrays.sort(edges,(a,b)->Integer.compare(a[2], b[2]));
+        for(int e[]:edges){
+            int u = e[0];
+            int v = e[1];
+            int w = e[2];
+            if(d.find(u)!=d.find(v)){
+                d.union(u, v);
+                cost+=w;
+                ar.add(new int[]{u,v});
+            }
+        }
+        return new MSTResult(cost, ar);
     }
 
 

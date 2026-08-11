@@ -1,0 +1,6 @@
+/**
+ * DSU
+ */
+public record DSU() {
+
+}
