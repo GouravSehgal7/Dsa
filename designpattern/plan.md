@@ -137,18 +137,18 @@ Used by:
 Rails
 Laravel Eloquent
 3. Object Creation Patterns
-Factory Pattern
+<!-- Factory Pattern
 
 Creates objects.
 
-PaymentFactory.create("stripe")
+PaymentFactory.create("stripe") -->
 Abstract Factory
 
 Creates families of related objects.
 
 Create Mongo Objects
 Create Postgres Objects
-Builder Pattern
+<!-- Builder Pattern
 
 Step-by-step object creation.
 
@@ -160,7 +160,7 @@ Singleton
 
 Only one instance.
 
-DatabaseConnection
+DatabaseConnection -->
 4. Behavioral Patterns
 Strategy Pattern
 
