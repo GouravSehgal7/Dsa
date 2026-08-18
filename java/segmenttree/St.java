@@ -25,7 +25,7 @@ public class St {
             build(2*i+2, mid+1, r);
             this.tree[i] = this.tree[2*i+1]+this.tree[2*i+2];
         }
-
+        
         public int query(int i, int l , int r , int ql , int qr){
             // non overlaping
             if(ql>r || qr<l){
