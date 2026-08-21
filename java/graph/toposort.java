@@ -23,6 +23,19 @@ public class toposort {
         st.push(n);   
     }
 
+    public static void topo3(int adj[][], boolean vis[], int n , Stack<Integer> st){
+        vis[n] = true;
+        for(int e: adj[n]){
+            if(vis[e] != true){
+                topo3(adj, vis, e, st);
+            }
+        }
+        st.add(n);
+    }
+
+    
+
+
     // [
     //     [1,2,3],
     //     [2,4,5],
@@ -94,6 +107,8 @@ public class toposort {
         if(res.size() != n) return new ArrayList<>();
         return res;
     }
+
+
 
 
     

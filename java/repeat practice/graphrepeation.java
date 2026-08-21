@@ -207,5 +207,9 @@ public class graphrepeation {
         return new MSTResult(cost, ar);
     }
 
+    // 
+    public void ballmanford1(int n , int edgelist[][]){
+
+    }
 
 }

@@ -249,6 +249,8 @@ public class algosrepetation {
         }
         return i;
     }
+
+    
     public static void quicksort2(int arr[], int st , int ed){
         if(st>=ed){
             return;

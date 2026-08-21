@@ -105,6 +105,14 @@ public class St {
             tree[i] = Math.min(tree[2*i+1],tree[2*i+2]);
         }
     }
+
+    public static void update(int i , int l , int r , int pos , int val){
+
+        if(l == r){
+            are[l] = val;
+            tree[i] = val;
+        }
+    }
     
     public class SumSegmentwithLazyProp{
 
