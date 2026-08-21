@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 import dp.maskeddp;
 
@@ -207,9 +208,67 @@ public class graphrepeation {
         return new MSTResult(cost, ar);
     }
 
-    // 
-    public void ballmanford1(int n , int edgelist[][]){
+    public MSTResult prims(ArrayList<ArrayList<int[]>> ar){
+        boolean inMst[] = new boolean[ar.size()];
+        PriorityQueue<int[]> pq = new PriorityQueue<>();
+        ArrayList<int[]> msres = new ArrayList<>();
+        // u,v,w
+        pq.add(new int[]{-1,0,0});
+        while (!pq.isEmpty()){
+            int[] p = pq.poll();
+            int u = p[0];
+            int v = p[1];
+            int w = p[2];
+
+
+        }
 
     }
+    // 
+    public int[] ballmanford1(int V , int edgelist[][],int src){
+        int dist[] = new int[V];
+        for(int i = 0;i<dist.length;i++){
+            dist[i] = Integer.MAX_VALUE;
+        }
+        dist[src] = 0;
+        for(int i = 0;i<V-1;i++){
+            for(int e[] : edgelist){
+                int u = e[0];
+                int v = e[1];
+                int w = e[2];
+                if(dist[u] != Integer.MAX_VALUE && dist[v]>dist[u]+w){
+                    dist[v] = dist[u]+w;
+                }
+            }
+        }
+        return dist;
+    }
+
+    public static boolean ballmanfordnegativecycle(int src , int V, int edgelist[][]){
+        int dist[] = new int[V];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[src] = 0;
+        for(int i = 0;i<V-1;i++){
+            for(int e[]:edgelist){
+                int u = e[0];
+                int v = e[1];
+                int w = e[2];
+                if(dist[v] > dist[u]+w && dist[u] != Integer.MAX_VALUE){
+                    dist[v] = dist[u]+w;
+                }
+            }
+        }
+        for(int e[]:edgelist){
+                int u = e[0];
+                int v = e[1];
+                int w = e[2];
+                if(dist[v] > dist[u]+w && dist[u] != Integer.MAX_VALUE){
+                    return true;
+                }
+        }
+        return false;
+    }
+
+    // fuck you floyed warshal i am done with ballmanford
 
 }
