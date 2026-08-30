@@ -79,7 +79,6 @@ public class que {
     }
     // Q with arraylist
 
-
     // Deck or Deque or double ended queue
     public static void DeQue(){
         Deque<Integer> dq = new ArrayDeque<>();
@@ -166,6 +165,13 @@ public class que {
 
     }
  
+
+    public static uniquecharinstring(int arr[]){
+        
+    }
+
+
+
     public static void main(String[] args) {
         
         QLL q = new QLL();

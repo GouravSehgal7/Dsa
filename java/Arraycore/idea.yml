@@ -34,7 +34,7 @@ Core Idea
 
 Represent subarray:
 
-prefix[r] - prefix[l]
+prefix[r] - prefix[l-1]
 
 Instead of enumerating windows.
 
