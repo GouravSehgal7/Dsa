@@ -1,0 +1,21 @@
+convert one input format to other format 
+let say older class f(name,age,dob)
+but new class want g(name,age , yearbirth)
+older can not talk to newer so introduce adapter 
+
+or
+
+we integrate third party lib which have some method name
+and take some parameter
+what i used to do is directly call these function withing my acting
+function cause tight coupling
+now if i changed the library the third party to other service i need to change 
+existing code again and again
+so we will make adapter
+
+adapter take input as our code parameter and convert that input
+to the third party parameter
+
+we use some third party to which if we give text it give xml data
+we need to give it to client in form of json
+so we will use adapter to convert to xml to json format

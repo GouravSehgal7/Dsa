@@ -1,0 +1,7 @@
+publisher subscriber pattern
+multiple subscriber will subscriber to object 
+whenever the state of object change it will be notified to all subscriber
+
+observable ---- one to many ----- observer
+
+observable push the new state detail to observer

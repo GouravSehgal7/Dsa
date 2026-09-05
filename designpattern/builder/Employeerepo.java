@@ -1,4 +1,4 @@
-package designpattern.builder;
+package builder;
 
 public class Employeerepo {
     private int id;

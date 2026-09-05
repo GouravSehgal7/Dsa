@@ -1,9 +1,21 @@
-package designpattern.builder;
+package builder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BuilderEmployeerepo {
+    private int id;
+    private String name;
+    private int salary;
+    private int account;
+    private int batchid;
+    private BuilderEmployeerepo(Builder builder){
+        this.account = builder.account;
+        this.id = builder.id;
+        this.batchid = builder.batchid;
+        this.salary = builder.salary;
+        this.name = builder.name;
+    }
     public static class Builder {
         private int id;
         private String name;
@@ -45,17 +57,4 @@ public class BuilderEmployeerepo {
             return new BuilderEmployeerepo(this);
         }
     }
-    private int id;
-    private String name;
-    private int salary;
-    private int account;
-    private int batchid;
-    private BuilderEmployeerepo(Builder builder){
-        this.account = builder.account;
-        this.id = builder.id;
-        this.batchid = builder.batchid;
-        this.salary = builder.salary;
-        this.name = builder.name;
-    }
-
 }

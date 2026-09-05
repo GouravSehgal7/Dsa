@@ -1,4 +1,4 @@
-package designpattern.builder;
+package builder;
 
 public class App {
     // without builder
