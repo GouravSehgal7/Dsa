@@ -13,11 +13,9 @@ public class Observable implements IObservable {
         this.name = name;
         this.ls = new ArrayList<>();
     }
-
+    @Override
     public void adduser(Objects o) {
-        // TODO Auto-generated method stub
         ls.add(o);
-        
     }
 
     @Override

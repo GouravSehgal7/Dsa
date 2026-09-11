@@ -1,0 +1,11 @@
+let say we have an object of some class which do some work
+and we want to add some extra responsiblity over it on runtime
+
+one option is to use inheritance 
+inherit the old class for new class and override the function which we want to change
+and finally based on condition we can run the function on child or parent
+
+but decurator use a different approach 
+it wrap the object with an another function
+the output of that function is altered by the outer decurator wrapper which change or give it more responsiblity
+
