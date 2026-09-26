@@ -76,6 +76,7 @@ public class frequency {
         }
     }
 
+
     public static int kaddans(int arr[]){
         if(arr.length <=0) return -1;
         int currsum = arr[0];
@@ -86,6 +87,28 @@ public class frequency {
             maxsum = Math.max(maxsum, currsum);
         }
         return maxsum;
+    }
+    public static int kaddan4(int arr[]){
+        if(arr.length<=0) return  -1;
+        int currsum = 0;
+        int maxsum = Integer.MIN_VALUE;
+        for(int i = 0;i<arr.length;i++){
+            int n = arr[i];
+            currsum = Math.max(currsum+n, n);
+            maxsum = Math.max(maxsum, currsum);
+        }
+        return maxsum;
+    }
+
+    public static int kaddan5(int arr[]){
+        int currsum = 0;
+        int minsum = Integer.MAX_VALUE;;
+        for(int i = 0;i<arr.length;i++){
+            int n = arr[i];
+            currsum = Math.min(currsum+n, n);
+            minsum= Math.min(minsum, currsum);
+        }
+        return  minsum;
     }
 
     public static int kaddans2(int arr[]){

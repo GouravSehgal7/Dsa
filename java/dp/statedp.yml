@@ -1,0 +1,43 @@
+In basic DP (like 0/1 Knapsack or Longest Increasing Subsequence), 
+your subproblem is \often just "what is the best 
+answer using the first $i$ items?"
+In State DP, knowing where you are (index $i$) is not enough.
+You also need to know the condition or context you 
+are currently in.
+
+The Markov Property
+State DP works because of the Markov Property: The future depends only upon the present state, not on the past path taken to arrive there.
+The 3 Major Archetypes of State DP
+Archetype 1: Action Restrictions (Adjacent / Alternating Choices)
+Concept: You make discrete choices at each step, but 
+taking choice $A$ restricts or alters what choices 
+are allowed at the next step.
+Archetype 2: Finite State Automata (Cool downs & Hold States)
+Concept: The system transitions through explicit 
+operational phases (e.g., Holding Stock vs. Empty 
+Handed vs. Cooling Down).
+Archetype 3: Tracking Modulo / Parity / Counts
+Concept: You need properties like "sum is divisible by 
+$k$" or "number of odd numbers is even." You store the 
+remainder/count as part of the state.Canonical 
+Example: Subarrays / Sequences with Sum Divisible by 
+$K$Find the maximum length or maximum sum of a sequence 
+where the condition depends on $X \pmod K$.State 
+Definition: $\text{dp}[i][r]$ = optimal score at index $i$ where the 
+cumulative property modulo $K$ equals $r$ ($r \in [0, K-1]$).
+
+funkoff this theory just learn this
+You need State DP whenever "index $i$" alone does not give you enough 
+context to make a valid decision for step $i+1$.
+1. Does a choice at step $i$ lock or unlock choices at 
+step $i+1$?If Yes $\rightarrow$ State DP.
+Example: "If I paint house $i$ Red, I cannot paint house $i+1$ Red." 
+You must track color at step $i$.
+2. Is there a "memory" requirement that resets or changes based on 
+actions?If Yes $\rightarrow$ State DP.
+Example: "After selling stock, I must rest for 1 day." The system needs 
+memory of whether you are Holding, In Cooldown, or Free to Buy.
+The 3-Step Method to Identify the Exact State Needed
+When designing the state, your goal is minimality: 
+include just enough information so that future choices depend only on 
+the current state, without carrying unnecessary history.

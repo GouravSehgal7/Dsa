@@ -1,0 +1,28 @@
+  this technique will help you to make tabulation solution without fucking around recursion or memo
+  if you are pallandrom i will help you
+  concept 
+  we will have large problem 
+  break it into small problem 
+  example we are asked to select a subarray between l to r , multiply all elem there and take mod with k and return the answer 
+  instead of taking all the parts we will take any small valid range form l to r
+  solve all those small problem 
+  combine result to larger part
+  places i stuck when facing dp 
+  1. what will be the state
+  for any given word problem what will be the states, which might become state of dp
+  trust me this seem easy if we are in recursion seen problem but not for unseen problem
+  2. what will be the formula of dp
+  3. why does it even make sence do i have any mathmaticall proof to reach this solution
+
+
+  concept
+  declare empty dp array
+  now read question 5 time and think
+  what will be the meaning of dp does it represent indexes 
+  is it possibly 1d , is it possibly 2d or 3d 
+  what state changes as we solve it
+  dp[i] = best answer to the question if size of array was just i
+  calc dp 1 , dp 2 , dp 2 on copy and try to find any formula 
+  try to find general formula
+  solve in loop
+

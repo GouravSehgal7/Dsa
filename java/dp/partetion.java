@@ -48,6 +48,15 @@ public class partetion {
         }
     }
 
+    // given an array with some numbers  
+    // we need to partetion that array such that length each subarray < k given 
+    // we can do as may partetion we want 
+    // for a subset all the element in that subarray will be replaced by the max elem of that array
+    // find the max sum from that one subset
+    public static void frontpart(int arr[], int k){
+
+    }
+
 
     public static void main(String[] args) {
         // mcm 
