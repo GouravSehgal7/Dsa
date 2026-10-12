@@ -2,7 +2,7 @@ package segmenttree;
 // the moment i decided i will not cover this topic even by mistake
 // my fucking life decided to taught me a lesson 
 // and i got question of Binary Index Tree in my leetcode podt and broke my 13 days streak
-// if you are watching this and your birthday is on 3 march or 6 march , i need your help palindrome
+// if you are watching this and your birthday is on 6 march , i need your help palindrome
 public class Ft {
     public class FenwikTree {
         int n;

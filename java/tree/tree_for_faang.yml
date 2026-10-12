@@ -1,0 +1,80 @@
+Tree DSA: the toolbox
+1. Core tools — learn these first 
+
+These are reusable techniques, not individual problems.
+
+1. Subtree aggregation (DFS + postorder) --------------------------- done
+
+Tool: bottom-up information propagation
+
+Calculate subtree size, height, sum, minimum, maximum, or any property composable from children.
+
+Use when: The answer at a node depends on information from its descendants.
+
+2. Tree DP
+
+Tool: memoized optimization over subtrees
+
+Store the best answer for each subtree and the relevant conditions on its root.
+
+Use when: A choice at one node constrains choices in its descendants.
+
+Examples: maximum path sum, independent set, camera placement, tree knapsack.
+
+3. Rerooting DP
+
+Tool: transfer an answer across an edge
+
+Reuse an answer for one root to compute the answer for another root.
+
+Use when: You need an aggregate for every node, rather than only one fixed root.
+
+4.  Tree hashing / canonicalization
+
+Tool: tree → structural identity
+
+Give equivalent subtrees the same canonical signature or ID.
+
+Use when: You need structural equality, duplicate detection, or counting distinct shapes.
+
+5. Euler tour / tree flattening
+
+Tool: tree → array intervals
+
+Map each subtree to a contiguous array range.
+
+Use when: You want subtree sum, frequency, minimum, or updates using prefix sums, Fenwick trees, or segment trees.
+
+
+6. Binary lifting + LCA
+
+Tool: fast jumps through parent pointers
+
+Precompute ancestors at distances 2
+
+Use when: You have many ancestor, kth-ancestor, or lowest-common-ancestor queries.
+
+7. Heavy-light decomposition (HLD)
+
+Tool: tree path → a few array intervals
+
+Combine with a segment tree to support path queries and updates.
+
+Use when: You need repeated path sums, maxima, or other associative aggregates.
+
+
+2. Advanced tools — learn when a problem demands them
+
+DSU on tree -> Answers many subtree-statistic queries -> Repeated distinct-color or frequency questions
+
+
+Cartesian/tree structural encoding -> Represents or reconstructs tree structure -> Uniqueness, reconstruction, or structural constraints
+
+
+Virtual tree -> Compresses a tree to relevant terminals -> Many queries involving a small subset of nodes
+
+
+Centroid decompositionn -> Splits the tree into balanced componentsn -> Distance-based queries over many nodes
+
+
+Small-to-large merging -> Merges subtree maps efficiently -> Frequency/color statistics for every subtree

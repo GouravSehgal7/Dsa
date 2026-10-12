@@ -1,0 +1,94 @@
+// All major merge-interval variants
+
+The good news is that most interval questions reuse the same underlying idea. What changes is 
+the operation you perform on the intervals.
+
+1
+
+Merge overlapping intervals
+
+Sort + current interval + extend right boundary
+
+Representative problem: Merge Intervals
+
+https://leetcode.com/problems/merge-intervals/description/
+
+2
+
+Insert a new interval
+
+Scan before + merge overlaps + scan after
+
+Representative problem: Insert Interval
+
+3
+
+Find intersections
+
+Two pointers + max start + min end  
+
+Representative problem: Interval List Intersections
+
+4
+
+Remove covered intervals
+
+Sort + track maximum right boundary
+
+Representative problem: Remove Covered Intervals
+
+Sort Strategy:Sort intervals primarily by start point in ascending order ($a[0] \uparrow$).If 
+two intervals have the same start point, sort by end point in descending order ($a[1] \downarrow$).
+Why reverse-sort end points for ties? Placing the larger interval first ensures that any smaller 
+interval starting at the same position is immediately recognized as covered without edge-case bugs.
+Tracking the Boundary:Iterate through the sorted list and maintain maxEnd (the largest right 
+boundary seen so far).For any current interval [start, end]:If end <= maxEnd, this interval is 
+completely covered by a previous interval.If end > maxEnd, this interval extends past all previous
+intervals and cannot be covered. We increment our non-covered count and update maxEnd = end.
+
+5
+
+Minimum meeting rooms
+
+Sort + min-heap of end times
+
+Representative problem: Meeting Rooms II
+
+6
+
+Maximum non-overlapping intervals
+
+Sort by end + greedy selection
+
+Representative problem: Non-overlapping Intervals
+
+The Non-overlapping Intervals problem asks for the minimum number of intervals to remove so that 
+the remaining intervals do not overlap.
+This is equivalent to finding the maximum number of non-overlapping intervals you can keep, and 
+subtracting that count from the total number of intervals.
+
+
+
+
+7
+
+Interval scheduling with weights
+
+Sort + DP + binary search
+
+Representative problem: Maximum Profit in Job Scheduling
+
+8
+
+Dynamic interval queries
+
+Ordered map / TreeMap / segment tree
+
+Representative problem: My Calendar / range queries
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+concept of line sweep 
+The Unbreakable Rules of Pure Line SweepAny algorithm that qualifies as a pure Line Sweep strictly
+adheres to three core 
+phases:$$\text{Intervals } [s_i, e_i] \xrightarrow{\text{1. Event Generation}} \text{List } (x, \Delta) \xrightarrow{\text{2. Sorting}} \text{Ordered Stream} \xrightarrow{\text{3. Sweeping}} \text{Prefix Sum } \sum \Delta$$1. Event Generation (Deconstruction)An interval $[s_i, e_i]$ is never processed as a single whole object. It is broken into two independent, point-in-time events:Entry event at $s_i$ with delta $+1$Exit event at $e_i$ with delta $-1$2. Event Sorting (Temporal Ordering)All $2N$ events are merged into a single timeline and sorted purely by their coordinate $x$. If two coordinates are identical, a secondary tie-breaking rule dictates whether exit events ($-1$) or entry events ($+1$) come first (depending on whether boundaries are inclusive or exclusive).3. State Accumulation (Prefix Sum Sweep)The sweep line steps through coordinates $x_1, x_2, \dots, x_{2N}$ one event at a time. The active count (or system state) at coordinate $x_k$ is strictly the running total of all deltas encountered so far:$$\text{Active State}(x_k) = \sum_{j=1}^{k} \Delta_j$$
