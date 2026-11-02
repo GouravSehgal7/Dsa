@@ -1,0 +1,66 @@
+Consider a document editor.
+
+A document can be in different states:
+- Draft
+- Under Review
+- Published
+- Archived
+Now consider this operation:
+document.publish();
+
+Should this operation always behave the same way?
+
+No.
+Current state --------------	Calling publish() -------------- new state
+Draft --------------	Not allowed; must submit for review -------------- same
+Under Review --------------	Can publish after approval -------------- publish
+Published --------------	Already published -------------- same
+Archived --------------	Cannot publish -------------- same
+
+Number of state has to be finite and Number of method which change the state or object or depend on the state has to be finite as well
+
+The method is the same:
+document.publish();
+But its behavior changes depending on the document's current state.
+and after the complete the state of that object can also change respectively
+This is the exact problem State Pattern addresses.
+- In programming we have to apply multiple if else to check the state and then do the appropriate action
+- and this has to be same for each function whose output depends on some state
+- if we added some new state then we have to add it all place and update all function for that specific state condition
+
+class Document {
+
+    private String state = "DRAFT";
+
+    public void publish() {
+
+        if (state.equals("DRAFT")) {
+            System.out.println("Submit for review");
+        }
+        else if (state.equals("REVIEW")) {
+            System.out.println("Publishing document");
+            state = "PUBLISHED";
+        }
+        else if (state.equals("PUBLISHED")) {
+            System.out.println("Already published");
+        }
+        else if (state.equals("ARCHIVED")) {
+            System.out.println("Cannot publish archived document");
+        }
+    }
+
+    public void archive() {
+
+        if (state.equals("PUBLISHED")) {
+            state = "ARCHIVED";
+        }
+        else {
+            System.out.println("Cannot archive");
+        }
+    }
+}
+
+how to use state pattern
+make an abstract class/ interface contain all methods which depends on those state
+currently we have publish() , archive() as methods
+make concrete class of the states which will inherit interface and implement those function
