@@ -1,0 +1,41 @@
+You have two types of notifications:
+- Email Notification
+- SMS Notification
+And two delivery mechanisms:
+- Normal Delivery
+- Urgent Delivery
+A straightforward inheritance approach might look like this:
+if we use inheritance as a concept then what we have to do is: 
+
+
+
+
+
+                                                    |---> Normal Delivery
+                      |---> Email Notification ---> |
+                      |                             |---> Urgent Delivery
+Notification class -->|
+                      |                           |---> Normal Delivery
+                      |---> SMS Notification ---> |
+                                                  |---> Urgent Delivery
+                                                
+as we can see if we have n notifications service , m methods then we will have n * m inheritance
+this will cause class explosion
+we had to make multiple classes to make a simple feature
+
+Bridge design pattern solve this problem 
+Instead of using inheritance for every combination, we separate two independent dimensions.
+1. Abstraction: High level part of our main goal (What kind of notification do we want?)
+2. Implementation:  low level parts of main goal on which high level can depend(How should the notification be delivered?)
+so we have to figure out this high level part and low level part and Implementation them separate
+and then need to find some way to connect them this can be done by providing a 
+'has a' .... composition relationship 
+form low level to high level
+
+            Abstraction(high level)    -------- has a ----------------> Implementation(low level)
+                abstract class                                                  abstract class
+                  notification                                                  Delivery types
+                        ^                                                             ^
+                        |                                                             |
+                        |---> Email Notification                                      |---> Normal Delivery
+                        |---> SMS Notification                                        |---> Urgent Delivery
