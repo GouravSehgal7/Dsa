@@ -9,3 +9,116 @@ but decurator use a different approach
 it wrap the object with an another function
 the output of that function is altered by the outer decurator wrapper which change or give it more responsiblity
 
+
+Add new functionality to an existing object dynamically, without modifying its original 
+class or creating a separate subclass for every possible combination.
+
+lets assume 
+
+Intent
+
+The Decorator Pattern is a structural design pattern that allows us to dynamically add responsibilities or behaviours to an existing object without modifying its original class.
+
+It uses composition and delegation instead of relying on inheritance.
+
+Problem with the Traditional Approach
+
+The traditional approach uses inheritance to extend functionality.
+
+However, when multiple optional features need to be combined, we face two problems:
+
+Class explosion: We need separate subclasses for different combinations of features.
+
+Inflexibility: Combinations are fixed at compile time rather than being composed dynamically at runtime.
+
+For example, if we have Milk, Sugar and Chocolate additions, we may need separate classes for:
+
+MilkCoffee
+
+SugarCoffee
+
+ChocolateCoffee
+
+MilkSugarCoffee
+
+MilkChocolateCoffee
+
+SugarChocolateCoffee
+
+MilkSugarChocolateCoffee
+
+As the number of optional features increases, the number of possible combinations grows exponentially.
+
+Solution
+
+Instead of creating subclasses for every combination, we wrap an object inside decorator objects.
+
+Each decorator:
+
+Implements the same interface as the original object.
+
+Holds a reference to another object of that interface.
+
+Delegates existing behaviour to the wrapped object.
+
+Adds or modifies behaviour before or after delegation.
+
+Since decorators implement the same interface, they can wrap both original objects and other decorators.
+
+Structure
+
+Component: Common interface implemented by the original object and decorators.
+
+Concrete Component: The original object providing the basic functionality.
+
+Base Decorator: Implements the component interface and holds a component reference.
+
+Concrete Decorators: Extend the base decorator to add specific responsibilities.
+
+Client: Composes decorators at runtime and interacts through the component interface.
+
+How It Works
+
+Decorators form a chain of wrapped objects.
+
+When a client invokes a method:
+
+The outermost decorator receives the call.
+
+It delegates to the wrapped object.
+
+Each decorator can add its own behaviour.
+
+The call eventually reaches the original object.
+
+Results return through the decorator chain.
+
+Advantages
+
+Adds functionality dynamically at runtime.
+
+Avoids creating subclasses for every feature combination.
+
+Follows the Open/Closed Principle: new decorators can be introduced without modifying existing components.
+
+Allows flexible composition of independent behaviours.
+
+Limitations
+
+Creates multiple small objects and additional layers of delegation.
+
+Debugging can become harder with deeply nested decorators.
+
+Adding a new method to the component interface requires decorators to support that method as well.
+
+When to Use
+
+Use Decorator when:
+
+An object needs optional or dynamically configurable functionality.
+
+Multiple behaviours need to be combined independently.
+
+Inheritance would result in too many subclasses or rigid combinations.
+
+Core Idea: Wrap an object with another object implementing the same interface to extend its behaviour dynamically.
