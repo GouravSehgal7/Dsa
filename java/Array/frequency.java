@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
 public class frequency {
 
     public static int MaxElement(int arr[]){
@@ -224,6 +229,29 @@ public class frequency {
         return ar;
     }
 
+    public static void Iterationconcept(HashMap<Integer,Integer> hm, HashSet<Integer> hs){
+        for(Map.Entry<Integer,Integer> e : hm.entrySet()){
+            int k = e.getKey();
+            int v = e.getValue();
+        }
+        hm.forEach((key,value)->{
+            System.out.println(key);
+            System.out.println(value);
+        });
+        hs.forEach((k)->{
+            System.out.println(k);
+        });
+        for(int e : hs){
+            System.out.println(e);
+        }
+        ArrayList<Integer> ar = new ArrayList<>();
+        ar.forEach((e)->{
+            System.out.println(e);
+        });
+        for(int e : ar){
+            System.out.println(e);
+        }
+    }
     
 
 
