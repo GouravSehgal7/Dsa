@@ -1,0 +1,4 @@
+stratigy pattern says that we have to use combination of abstract/interface and composition
+and use of inheritance as min as possible to be specific no use of inheritance 
+rather we have to use composition in place of inheritance
+
